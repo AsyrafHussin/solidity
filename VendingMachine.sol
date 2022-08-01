@@ -10,10 +10,10 @@ contract VendingMachine {
     uint public immutable donutPrice;
 
     // address(this) = address of current contract
-    constructor(){
+    constructor(uint _donutBalance,uint _donutPrice){
         owner = msg.sender;
-        donutBalances[address(this)] = 100;
-        donutPrice = 1 ether;
+        donutBalances[address(this)] = _donutBalance;
+        donutPrice = _donutPrice; // in gwei; 1 ether = 1000000000
     }
     
     modifier onlyOwner(){
