@@ -4,7 +4,7 @@ pragma solidity ^0.8.15;
 
 contract VendingMachine {
     address public owner;
-    mapping(address => uint) donutBalances;
+    mapping(address => uint) public donutBalances;
     uint public immutable donutPrice;
 
 
@@ -28,10 +28,6 @@ contract VendingMachine {
     modifier checkStock(uint _amount){
         require(donutBalances[address(this)] >= _amount, "Not enough donut stock to purchase.");
         _;
-    }
-
-    function getDonutBalance() public view returns (uint){
-        return donutBalances[address(this)];
     }
 
     function purchase(uint _amount) public payable costs(_amount) checkStock(_amount){
