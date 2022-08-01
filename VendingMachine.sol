@@ -7,7 +7,6 @@ contract VendingMachine {
     mapping(address => uint) public donutBalances;
     uint public immutable donutPrice;
 
-
     // address(this) = address of current contract
     constructor(){
         owner = msg.sender;
