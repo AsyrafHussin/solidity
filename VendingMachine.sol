@@ -5,7 +5,7 @@ pragma solidity ^0.8.15;
 /// @title Vending Machine to buy Donut
 /// @author Asyraf Hussin
 contract VendingMachine {
-    address public owner;
+    address private owner;
     mapping(address => uint) public donutBalances;
     uint public immutable donutPrice;
 
